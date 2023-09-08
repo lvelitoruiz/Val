@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+}
+
+@layer base {
+  :root {
+    --color-primary: #009877;
+    --color-secondary: #313E48;
+    --border-ligth: #DDDDDD;
+    --gray: #F6F6F6;
+  }
+}
+
+:root {
+  --swiper-pagination-color: #009877;
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-height: 12px;
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+  --swiper-pagination-bullet-border-radius: 0;
+}
+
+.bulletBottom .swiper-pagination-fraction, 
+.bulletBottom .swiper-pagination-custom, 
+.bulletBottom .swiper-horizontal > .swiper-pagination-bullets, 
+.bulletBottom .swiper-pagination-bullets.swiper-pagination-horizontal {
+  --swiper-pagination-bottom: 60px;
+}
