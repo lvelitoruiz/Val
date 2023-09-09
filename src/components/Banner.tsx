@@ -1,4 +1,4 @@
-import { City } from "iconoir-react";
+import { City, NavArrowRight, NavArrowLeft, Planimetry, Farm, LotOfCash, HomeSale, PiggyBank, ArrowTr} from "iconoir-react";
 import React, { useState } from "react";
 
 import "swiper/css";
@@ -91,10 +91,10 @@ const Banner = () => {
                   <img className="w-full h-full object-cover rounded-t" src={item.imgUrl} alt={item.imgAlt} />
                 </div>
               </div>
-              <div className="container mx-auto h-full relative pl-16">
-                <div className="flex flex-col items-start justify-center h-[calc(100%-315px)] w-8/12">
+              <div className="container mx-auto px-10 h-full relative lg:pl-16">
+                <div className="flex flex-col items-start justify-center h-100% pt-10 md:pt-0 md:h-[calc(100%-315px)] md:w-8/12">
                   <div className="pb-5">
-                    <h2 className="text-[56px] text-white leading-tight pb-4">{item.title}</h2>
+                    <h2 className="text-[36px] md:text-[46px] lg:text-[56px] text-white leading-none lg:leading-tight pb-4">{item.title}</h2>
                     <p className="text-white font-light">{item.paragraph}</p>
                   </div>
                   {mostrar && (
@@ -110,8 +110,8 @@ const Banner = () => {
                       </div>
                     </div>
                   )}
-                  <div className="pt-10">
-                    <button className="w-[355px] bg-[--color-primary] h-[56px] flex items-center justify-center text-white uppercase font-semibold rounded">
+                  <div className="pt-10 w-full md:w-[355px]">
+                    <button className="w-full md:w-[355px] bg-[--color-primary] h-[56px] flex items-center justify-center text-white uppercase font-semibold rounded">
                       <span>{item.btn}</span>
                     </button>
                   </div>
@@ -121,6 +121,70 @@ const Banner = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="absolute bottom-16 left-0 right-0 w-full z-[2] hidden md:block">
+        <div className="mx-8 bg-[#313E48] h-[248px] flex">
+          <div className="min-w-[128px] flex flex-col bg-white">
+            <div className="w-full h-[50%] cursor-pointer flex items-center justify-center border-b border-[--border-ligth]">
+              <NavArrowRight color="#313E48" height={30} width={30} />
+            </div>
+            <div className="w-full h-[50%] cursor-pointer flex items-center justify-center">
+              <NavArrowLeft color="#313E48" height={30} width={30} />
+            </div>
+          </div>
+          <div className="w-full overflow-hidden">
+            <div className="flex overflow-auto">
+              <div className="flex flex-col p-10 h-[248px] min-w-[50%] lg:min-w-[25%] 2xl:min-w-[20%] relative bg-[--color-primary] cursor-pointer">
+                <City color="#fff" height={38} width={38} />
+                <h4 className="uppercase text-[20px] text-white leading-none pt-5 pb-2">Viviendas multifamiliares</h4>
+                <p className="text-sm text-white font-light">Encuentra aquí tu próximo departamento.</p>
+                <div className="absolute right-0 top-0 w-[42px] h-[42px] bg-black/30 flex items-center justify-center cursor-pointer">
+                  <ArrowTr color="#fff" height={20} width={20} />
+                </div>
+              </div>
+              <div className="flex flex-col p-10 h-[248px] min-w-[50%] lg:min-w-[25%] 2xl:min-w-[20%] relative cursor-pointer 2xl:pb-0">
+                <Planimetry color="#fff" height={38} width={38} />
+                <h4 className="uppercase text-[20px] text-white leading-none pt-5 pb-2">Lotes Urbanos</h4>
+                <p className="text-sm text-white font-light">Espacios dentro de la ciudad listos para que construyas tu casa o negocio.</p>
+                <div className="absolute right-0 top-0 w-[42px] h-[42px] bg-black/30 flex items-center justify-center cursor-pointer">
+                  <ArrowTr color="#fff" height={20} width={20} />
+                </div>
+              </div>
+              <div className="flex flex-col p-10 h-[248px] min-w-[50%] lg:min-w-[25%] 2xl:min-w-[20%] relative cursor-pointer 2xl:pb-0">
+                <Farm color="#fff" height={38} width={38} />
+                <h4 className="uppercase text-[20px] text-white leading-none pt-5 pb-2">Desarrollo Agroindustrial</h4>
+                <p className="text-sm text-white font-light">Rentabilizamos nuestros terrenos para crear nuevos espacios de cultivos.</p>
+                <div className="absolute right-0 top-0 w-[42px] h-[42px] bg-black/30 flex items-center justify-center cursor-pointer">
+                  <ArrowTr color="#fff" height={20} width={20} />
+                </div>
+              </div>
+              <div className="flex flex-col p-10 h-[248px] min-w-[50%] lg:min-w-[25%] 2xl:min-w-[20%] relative cursor-pointer 2xl:pb-0">
+                <PiggyBank color="#fff" height={38} width={38} />
+                <h4 className="uppercase text-[20px] text-white leading-none pt-5 pb-2">BANCO DE TERRENOS</h4>
+                <p className="text-sm text-white font-light">Buscamos el retorno de inversión sobre terrenos de alto valor.</p>
+                <div className="absolute right-0 top-0 w-[42px] h-[42px] bg-black/30 flex items-center justify-center cursor-pointer">
+                  <ArrowTr color="#fff" height={20} width={20} />
+                </div>
+              </div>
+              <div className="flex flex-col p-10 h-[248px] min-w-[50%] lg:min-w-[25%] 2xl:min-w-[20%] relative cursor-pointer 2xl:pb-0">
+                <HomeSale color="#fff" height={38} width={38} />
+                <h4 className="uppercase text-[20px] text-white leading-none pt-5 pb-2">VENDE TU TERRENO</h4>
+                <p className="text-sm text-white font-light">Véndenos tu terreno a nosotros.</p>
+                <div className="absolute right-0 top-0 w-[42px] h-[42px] bg-black/30 flex items-center justify-center cursor-pointer">
+                  <ArrowTr color="#fff" height={20} width={20} />
+                </div>
+              </div>
+              <div className="flex flex-col p-10 h-[248px] min-w-[50%] lg:min-w-[25%] 2xl:min-w-[20%] relative cursor-pointer 2xl:pb-0">
+                <LotOfCash color="#fff" height={38} width={38} />
+                <h4 className="uppercase text-[20px] text-white leading-none pt-5 pb-2">¿QUIERES INVERTIR?</h4>
+                <p className="text-sm text-white font-light">Empieza a invertir en el sector inmobiliario a través de nuestro fondo de inversión.</p>
+                <div className="absolute right-0 top-0 w-[42px] h-[42px] bg-black/30 flex items-center justify-center cursor-pointer">
+                  <ArrowTr color="#fff" height={20} width={20} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
