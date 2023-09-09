@@ -4,8 +4,8 @@ import React, { } from "react";
 const Footer = () => { 
   return (
     <div className="bg-[--color-secondary]">
-      <div className="container mx-auto">
-        <div className="pt-10 flex justify-between items-start pb-20">
+      <div className="container mx-auto px-10 lg:px-0">
+        <div className="pt-10 pb-10 flex flex-col lg:flex-row gap-10 justify-between items-start md:pb-20">
           <p>Logo</p>
           <div>
             <p className="text-white text-[20px] pb-6">UBICANOS</p>
@@ -38,13 +38,13 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="border-t border-[#7F8387] flex items-center justify-between">
-          <div className="flex items-center gap-16 py-6">
+        <div className="border-t border-[#7F8387] flex items-center justify-between flex-col lg:flex-row">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-16 py-6">
             <a className="text-white font-light underline text-sm" href="">Términos y Condiciones</a>
             <a className="text-white font-light underline text-sm" href="">Políticas de Privacidad</a>
             <a className="text-white font-light underline text-sm" href="">Libro de Reclamaciones</a>
           </div>
-          <p className="text-white font-light text-sm">2023 © Todos los derechos reservados</p>
+          <p className="text-white font-light text-sm pb-6 md:py-6">2023 © Todos los derechos reservados</p>
         </div>
       </div>
     </div>

@@ -33,3 +33,36 @@
 .bulletBottom .swiper-pagination-bullets.swiper-pagination-horizontal {
   --swiper-pagination-bottom: 60px;
 }
+
+.banner-info {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.swiper-slide-active .banner-info {
+  animation: animacionOpacidad 1s ease-in-out forwards;
+  opacity: 1;
+}
+
+.banner-info .banner-text {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.swiper-slide-active .banner-text {
+  animation: animationBannerText 0.8s ease-in-out forwards;
+}
+
+@media (min-width: 768px) {
+  .banner-info {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .banner-info .banner-text {
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  }
+  
+  .swiper-slide-active .banner-text {
+    animation: animationBannerText 1s ease-in-out forwards;
+  }
+}

@@ -9,7 +9,7 @@ import Footer from "../components/Footer"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <><><><Header /><Banner /></><div className="container mx-auto py-28">
+    <><><><Header /><Banner /></><div className="container mx-auto py-20 md:py-28 px-10 lg:px-0">
       <Proyects />
     </div></><Footer /></>
   )
