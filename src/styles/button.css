@@ -1,0 +1,3 @@
+.btn-primary {
+  @apply bg-[--color-primary] flex items-center justify-center text-white uppercase font-semibold rounded
+}
