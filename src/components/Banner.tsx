@@ -32,6 +32,7 @@ const Banner = () => {
         "Construimos departamentos eco amigables, que ayudan a crear un mejor entorno a la vez que cuidamos el planeta.",
       nameProyect: "Top Life",
       btn: "VER NUESTROS PROYECTOS",
+      projects: true,
     },
     {
       title: "Urbanizamos lotes para crear mejores ciudades",
@@ -41,6 +42,7 @@ const Banner = () => {
         "Queremos que las ciudades crezcan ordenadamente y diseñamos proyectos de lotes urbanos para mejorar la calidad de vida de las personas.",
       nameProyect: "Oxapampa",
       btn: "VER NUESTROS PROYECTOS",
+      projects: true,
     },
     {
       title:
@@ -51,6 +53,7 @@ const Banner = () => {
         "Creamos nuevos negocios a partir de explotar terrenos de alto valor agrícola en el interior del país.",
       nameProyect: "Proyecto Olmos - Fundo San Isidro",
       btn: "VER NUESTROS PROYECTOS",
+      projects: true,
     },
     {
       title:
@@ -60,7 +63,7 @@ const Banner = () => {
       paragraph: "2,500 hectáreas forman parte de nuestro portafolio.",
       nameProyect: "",
       btn: "MÁS INFORMACIÓN",
-      mostrar: false,
+      projects: false,
     },
     {
       title: "¿Quieres vender un terreno urbano?",
@@ -70,7 +73,7 @@ const Banner = () => {
         "Buscamos nuevos espacios dentro de la ciudad para desarrollar proyectos inmobiliarios.",
       nameProyect: "",
       btn: "MÁS INFORMACIÓN",
-      mostrar: false,
+      projects: false,
     },
     {
       title: "Somos parte de Conexa Financial Group",
@@ -80,7 +83,7 @@ const Banner = () => {
         "Invierte con nosotros y genera rentabilidad a partir de productos inmobiliarios.",
       nameProyect: "",
       btn: "MÁS INFORMACIÓN",
-      mostrar: false,
+      projects: false,
     },
   ];
 
@@ -142,6 +145,7 @@ const Banner = () => {
               paragraph={item.paragraph}
               nameProyect={item.nameProyect}
               btn={item.btn}
+              projects={item.projects}
             />
           </SwiperSlide>
         ))}
