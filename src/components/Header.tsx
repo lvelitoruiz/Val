@@ -1,12 +1,15 @@
 import { FacebookTag, Instagram, LinkedIn } from "iconoir-react";
 import React from "react";
 import Button from "./Button";
+import Logo from "../images/logo.svg";
 
 const Header = () => {
   return (
     <div className="fixed w-full z-10">
       <div className="bg-white flex items-center justify-between h-[80px] shadow-[0_5px_20px_0_rgba(66,66,66,0.10)] px-10">
-        <a href="">Logo</a>
+        <a href="">
+          <img src={Logo} alt="" />
+        </a>
         <div className="hidden lg:block">
           <div className="flex items-center gap-10">
             <nav>
@@ -32,7 +35,7 @@ const Header = () => {
             <Button
               extraStyles="w-[216px] h-[48px] btn-primary"
               label={"Cotiza ahora"}
-              onClick={function () {}}
+              customClick={(event) => console.log(event)}
             />
             <ul className="flex items-center gap-5">
               <li>
