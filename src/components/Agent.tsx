@@ -13,7 +13,9 @@ const Agent: React.FC<ProjectProps> = ({
 }) => {
   return (
     <div>
-      <img className="h-[243px] w-full object-cover" src={imgUrl} alt="" />
+      <div className="w-full h-[243px] overflow-hidden">
+        <img className="object-cover h-full w-full transition duration-150 ease-out hover:scale-125" src={imgUrl} alt="" />
+      </div>
       <div className="flex items-center justify-between min-h-[82px] bg-[#F6F6F6] px-3 gap-4">
         <div>
           <p className="text-[--color-secondary]">{name}</p>

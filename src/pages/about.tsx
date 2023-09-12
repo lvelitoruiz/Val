@@ -54,7 +54,7 @@ const About: React.FC<PageProps> = () => {
   return (
     <>
       <Header />
-      <section className="pt-20 sticky top-0">
+      <section className="pt-20 lg:sticky lg:top-0">
         <Swiper
           spaceBetween={0}
           pagination={true}
@@ -136,7 +136,9 @@ const About: React.FC<PageProps> = () => {
               <p className="text-[--color-secondary] font-light pb-4">Promover proyectos de vivienda y agro industriales que respeten el medio ambiente y que mejoren la calidad de vida.</p>
             </div>
             <div className="col-span-10 md:col-span-12 lg:col-span-8 h-full">
-              <img src={imgAbout} alt="" />
+              <div className="w-full h-[438px] overflow-hidden rounded">
+                <img className="object-cover h-full w-full transition duration-150 ease-out hover:scale-125" src={imgAbout} alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -207,7 +209,7 @@ const About: React.FC<PageProps> = () => {
       <section className="bg-white relative pt-[326px]">
         <div className="bg-[--color-secondary] lg:w-6/12 pt-10 relative mb-[-250px]">
           <div className="pl-6 lg:pl-[calc((100vw-1024px)/2)] xl:pl-[calc((100vw-1280px)/2)] 2xl:pl-[calc((100vw-1536px)/2)]">
-            <div className="pr-20">
+            <div className="pr-6 md:pr-20">
               <h3 className="text-[24px] font-light text-white pb-5">Respaldados por <span className="font-normal">Conexa Financial Group</span></h3>
               <p className="text-white font-light pb-4">Somos la empresa inmobiliaria de Conexa Financial Group.</p>
               <p className="text-white font-light pb-4">Conexa Financial Group estructura y administra fondos de inversión privados que se enfocan en generar oportunidades para inversionistas e impulsar el crecimiento de los sectores más importantes de la economía del país a través de financiamiento a PYMES.</p>
