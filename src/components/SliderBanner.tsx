@@ -1,9 +1,6 @@
 import { City } from "iconoir-react";
 import React, { useEffect, useState } from "react";
 
-import "swiper/css";
-
-import { SwiperSlide } from "swiper/react";
 import Button from "./Button";
 
 interface SliderBannerProps {
@@ -48,10 +45,10 @@ const SliderBanner: React.FC<SliderBannerProps> = ({
           />
         </div>
       </div>
-      <div className="container mx-auto h-full relative pl-16">
-        <div className="flex flex-col items-start justify-center h-[calc(100%-315px)] w-8/12">
+      <div className="container mx-auto px-6 h-full relative lg:pl-16 banner-info">
+        <div className="banner-text flex flex-col items-start justify-center h-100% md:h-[calc(100%-315px)] pt-10 md:pt-0 md:w-8/12">
           <div className="pb-5">
-            <h2 className="text-[56px] text-white leading-tight pb-4">
+            <h2 className="text-[36px] md:text-[46px] lg:text-[56px] text-white leading-none lg:leading-tight pb-4">
               {title}
             </h2>
             <p className="text-white font-light">{paragraph}</p>
@@ -69,13 +66,10 @@ const SliderBanner: React.FC<SliderBannerProps> = ({
               </div>
             </div>
           ) : null}
-          <div className="pt-10">
-            {/* <button className="w-[355px] bg-[--color-primary] h-[56px] flex items-center justify-center text-white uppercase font-semibold rounded">
-              <span>VER NUESTROS PROYECTOS</span>
-            </button> */}
+          <div className="pt-10 w-full md:w-[355px]">
             <Button
               label={btn}
-              extraStyles="btn-primary"
+              extraStyles="btn-primary w-full md:w-[355px] h-[56px]"
               customClick={(event) => handleCustomClick(event)}
             />
           </div>

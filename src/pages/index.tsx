@@ -2,7 +2,7 @@ import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
-import Proyects from "../components/Proyects";
+import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -10,8 +10,8 @@ const IndexPage: React.FC<PageProps> = () => {
     <>
       <Header />
       <Banner />
-      <div className="container mx-auto py-20 md:py-28 px-10 lg:px-0">
-        <Proyects />
+      <div className="container mx-auto py-20 md:py-28 px-6 lg:px-0">
+        <Projects />
       </div>
       <Footer />
     </>

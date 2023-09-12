@@ -1,12 +1,14 @@
 import { Phone, FacebookTag, Instagram, LinkedIn } from "iconoir-react";
 import React, { } from "react";
 
+import Logo from "../images/val-white.svg";
+
 const Footer = () => { 
   return (
-    <div className="bg-[--color-secondary]">
-      <div className="container mx-auto px-10 lg:px-0">
-        <div className="pt-10 pb-10 flex flex-col lg:flex-row gap-10 justify-between items-start md:pb-20">
-          <p>Logo</p>
+    <div className="bg-[--color-secondary] relative">
+      <div className="container mx-auto px-6 lg:px-0">
+        <div className="pt-16 pb-10 flex flex-col lg:flex-row gap-10 justify-between items-start md:pb-20">
+          <img src={Logo} alt="" />
           <div>
             <p className="text-white text-[20px] pb-6">UBICANOS</p>
             <div>

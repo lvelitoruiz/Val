@@ -66,3 +66,27 @@
     animation: animationBannerText 1s ease-in-out forwards;
   }
 }
+
+.swiper-button-prev, 
+.swiper-button-next {
+  width: 48px !important;
+  height: 48px !important;
+  background: #313E48;
+  --swiper-navigation-color: white;
+  top: initial !important;
+  bottom: 0;
+  --swiper-navigation-sides-offset: 0;
+}
+
+.swiper-button-prev {
+  left: initial !important;
+  right: 60px !important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  --swiper-navigation-size: 19px
+}
+
+.SwiperAbout .swiper-wrapper {
+  padding-bottom: 60px;
+}

@@ -1,3 +1,7 @@
 .btn-primary {
   @apply bg-[--color-primary] flex items-center justify-center text-white uppercase font-semibold rounded
 }
+
+.btn-secondary {
+  @apply border-2 border-[--color-primary] flex items-center justify-center text-[--color-primary] uppercase font-semibold rounded
+}
