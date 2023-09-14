@@ -184,7 +184,7 @@ const Lot: React.FC<PageProps> = () => {
           <Swiper
             slidesPerView={1}
             centeredSlides={true}
-            spaceBetween={30}
+            spaceBetween={20}
             grabCursor={true}
             loop={true}
             breakpoints={{
@@ -194,11 +194,11 @@ const Lot: React.FC<PageProps> = () => {
               },
               768: {
                 slidesPerView: 2,
-                spaceBetween: 40,
+                spaceBetween: 20,
               },
               1024: {
                 slidesPerView: 4,
-                spaceBetween: 50,
+                spaceBetween: 20,
               },
             }}
           >
