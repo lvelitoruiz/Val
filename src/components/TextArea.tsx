@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useState } from "react";
 
-interface inputProps {
+interface TextAreaProps {
     texto: string;
     placeholder: string;
     name: string;
@@ -10,11 +10,10 @@ interface inputProps {
     onValueChange: (value: string) => void;
 }
 
-const Input = forwardRef(({texto,placeholder,name,type = "text",onValueChange,customStyles,extraStyles}: inputProps) => {
+const TextArea = forwardRef(({texto,placeholder,name,type = "text",onValueChange,customStyles,extraStyles}: TextAreaProps) => {
 
     const [inputValue,setInputValue] = useState("");
     const [placeHold,setPlaceHolder] = useState("");
-    const [inputType,setInputType] = useState("text");
     const [inputName,setInputName] = useState("");
 
     const handleChange = (value: string) => {
@@ -26,20 +25,19 @@ const Input = forwardRef(({texto,placeholder,name,type = "text",onValueChange,cu
         setInputValue(texto);
         setInputName(name);
         setPlaceHolder(placeholder);
-        setInputType(type);
     },[name, placeholder, texto, type]);
 
   return (
-    <input
-      className={`h-[50px] px-4 border border-[#8B8986] w-full outline-[--color-primary] rounded-none ${extraStyles}`}
-      type={inputType}
+    <textarea
       name={inputName}
       id={inputName}
+      cols={30}
+      rows={4}
       value={inputValue}
-      onChange={(event) => handleChange(event.target.value)}
       placeholder={placeHold}
-    />
+      className="p-4 border border-[#8B8986] w-full outline-[--color-primary] rounded-none"
+    ></textarea>
   );
 });
 
-export default Input;
+export default TextArea;
