@@ -1,4 +1,7 @@
 import React from "react";
+import AOS from 'aos';
+
+import 'aos/dist/aos.css';
 
 import Button from "./Button";
 import icon from "../images/icon.svg";
@@ -9,9 +12,11 @@ const InfoLot = () => {
   const handleCustomClick = (event: string) => {
     console.log("custom click: ", event);
   };
+  AOS.init();
+
   return (
     <>
-      <div className="container mx-auto px-6 lg:px-0">
+      <div className="container mx-auto px-6 lg:px-0" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
         <div className="grid grid-cols-10 md:grid-cols-12 gap-10">
           <div className="col-span-10 md:col-span-12 lg:col-span-4 h-full">
             <h2 className="text-[30px] lg:text-[44px] text-[--color-secondary] leading-none pb-8">

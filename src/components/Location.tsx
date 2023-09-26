@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import AOS from 'aos';
 
+import 'aos/dist/aos.css';
 import { PinAlt } from "iconoir-react";
 import iconWsp from "../images/icon-wsp.svg";
 
@@ -23,6 +25,7 @@ const Location: React.FC<ProjectProps> = ({
   wsp = false,
 }) => {
   const [InfoWsp, setProyectos] = useState(wsp);
+  AOS.init();
 
   useEffect(() => {
     if (wsp !== undefined && wsp !== null) {
@@ -33,7 +36,7 @@ const Location: React.FC<ProjectProps> = ({
     <>
       <div className="px-6 lg:pr-0 lg:pl-[calc((100vw-1024px)/2)] xl:pl-[calc((100vw-1280px)/2)] 2xl:pl-[calc((100vw-1536px)/2)]">
         <div className="flex items-start flex-col lg:flex-row">
-          <div className="w-full lg:w-4/12 pt-10 pr-10">
+          <div className="w-full lg:w-4/12 pt-10 pr-10" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
             <h2 className="text-[30px] lg:text-[44px] text-[--color-secondary] leading-none pb-8">
               {title}
             </h2>

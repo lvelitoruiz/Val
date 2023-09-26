@@ -1,13 +1,17 @@
 import React from "react";
+import AOS from 'aos';
 
 import agro14 from "../images/agro-14.jpg";
+import 'aos/dist/aos.css';
 
 const InfoAgro = () => {
+  AOS.init();
+  
   return (
     <>
       <div className="container mx-auto px-6 lg:px-0">
         <div className="grid grid-cols-10 md:grid-cols-12 gap-10">
-          <div className="col-span-10 md:col-span-12 lg:col-span-4 h-full">
+          <div className="col-span-10 md:col-span-12 lg:col-span-4 h-full" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
             <div className="pb-10">
               <p className="text-[--color-secondary] font-light">PROYECTO</p>
               <h2 className="text-[--color-secondary] text-[30px] lg:text-[44px] uppercase leading-none">

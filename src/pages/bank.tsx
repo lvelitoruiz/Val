@@ -8,8 +8,13 @@ import InfoMap from "../components/InfoMap";
 
 import bannerBank from "../images/banner-bank.jpg"
 import DetailBank from "../components/DetailBank";
+import AOS from 'aos';
+
+import 'aos/dist/aos.css';
 
 const Bank: React.FC<PageProps> = () => {
+  AOS.init();
+
   return (
     <>
       <Header />
@@ -23,7 +28,7 @@ const Bank: React.FC<PageProps> = () => {
               }
             />
           </div>
-          <div className="flex gap-10 flex-col lg:flex-row items-center justify-between">
+          <div className="flex gap-10 flex-col lg:flex-row items-center justify-between" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
             <InfoMap
               paragraphTwo={
                 "Este patrimonio nos permite crear valor futuro para potenciales proyectos agro industriales y respaldar nuestra actividad comercial en activos de gran valor."

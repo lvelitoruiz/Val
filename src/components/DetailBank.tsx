@@ -1,8 +1,13 @@
 import React from "react";
 
 import bank2 from "../images/bank-2.jpg";
+import AOS from 'aos';
+
+import 'aos/dist/aos.css';
 
 const DetailBank = () => {
+  AOS.init();
+
   return (
     <>
       <div className="container mx-auto px-6 lg:px-0">
@@ -16,7 +21,7 @@ const DetailBank = () => {
               />
             </div>
           </div>
-          <div className="col-span-10 md:col-span-12 lg:col-span-5 h-full">
+          <div className="col-span-10 md:col-span-12 lg:col-span-5 h-full" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
             <h2 className="text-[26px] lg:text-[30px] text-[--color-secondary] leading-tight lg:pt-8">
               Buscamos rentabilizar nuestros terrenos en la explotación agro
               industrial, sea para la venta o renta.

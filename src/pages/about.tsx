@@ -10,6 +10,9 @@ import InfoMap from "../components/InfoMap";
 import InfoImg from "../components/InfoImg";
 import AboutValue from "../components/AboutValue";
 import AboutConexa from "../components/AboutConexa";
+import AOS from 'aos';
+
+import 'aos/dist/aos.css';
 
 const About: React.FC<PageProps> = () => {
   const data = [
@@ -40,6 +43,8 @@ const About: React.FC<PageProps> = () => {
     },
   ];
 
+  AOS.init();
+  
   return (
     <>
       <Header />
@@ -57,7 +62,7 @@ const About: React.FC<PageProps> = () => {
               }
             />
           </div>
-          <div className="flex gap-10 flex-col lg:flex-row items-center justify-between">
+          <div className="flex gap-10 flex-col lg:flex-row items-center justify-between" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
             <InfoMap
               paragraphTwo={
                 "Hoy nos enfocamos en proyectos de venta inmobiliaria, en segmentos de vivienda multifamiliar, lotes, comercio y agro industrial."
@@ -95,7 +100,7 @@ const About: React.FC<PageProps> = () => {
       </section>
 
       <section className="pt-20 md:pt-28 pb-[280px] bg-[--gray] relative">
-        <div className="container mx-auto px-6 lg:px-0">
+        <div className="container mx-auto px-6 lg:px-0" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
           <div className="grid grid-cols-10 md:grid-cols-12 gap-10">
             <InfoImg
               title={"Nuestro propósito"}

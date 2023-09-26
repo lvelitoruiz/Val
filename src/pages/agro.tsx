@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -11,14 +11,24 @@ import DetailAgro from "../components/DetailAgro";
 
 import agro11 from "../images/agro-11.jpg";
 
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import Input from "../components/Input";
+import { Check } from "iconoir-react";
+import TextArea from "../components/TextArea";
+import Button from "../components/Button";
 
 
 const Agro: React.FC<PageProps> = () => {
+  const [userName, setUserName] = useState("");
+  const receiveFromChild = (event: any) => {
+    setUserName(event);
+  };
+
   const data = [
     {
       imgUrl: "/static/images/agro-10.jpg",
@@ -164,16 +174,92 @@ const Agro: React.FC<PageProps> = () => {
       <section className="py-20 md:py-28 relative bg-white">
         <div className="container mx-auto px-6 lg:px-0">
           <div className="grid grid-cols-10 md:grid-cols-12 gap-10">
-            <div className="col-span-10 md:col-span-12 lg:col-span-6">
+            <div className="col-span-10 md:col-span-12 lg:col-span-7">
               <img
                 className="w-full h-[490px] object-cover"
                 src={agro11}
                 alt=""
               />
             </div>
-            <div className="col-span-10 md:col-span-12 lg:col-span-6">
-              <div className="pl-10">
-                <p>FORM</p>
+            <div className="col-span-10 md:col-span-12 lg:col-span-5">
+            <div className="lg:pl-10">
+                <div className="pb-8">
+                  <h3 className="text-[20px] lg:text-[26px] text-[--color-secondary] leading-none pb-1">Renta o compra este terreno para tu negocio agro industrial:</h3>
+                </div>
+                <form className="grid grid-cols-6 md:grid-cols-6 gap-2" action="">
+                  <div className="col-span-6 md:col-span-3">
+                    <Input
+                      texto={""}
+                      placeholder={"Nombres"}
+                      name={"tutor"}
+                      onValueChange={receiveFromChild}
+                      type="text"
+                    />
+                  </div>
+                  <div className="col-span-6 md:col-span-3">
+                    <Input
+                      texto={""}
+                      placeholder={"Apellidos"}
+                      name={"tutor"}
+                      onValueChange={receiveFromChild}
+                      type="text"
+                    />
+                  </div>
+                  <div className="col-span-6 md:col-span-3">
+                    <Input
+                      texto={""}
+                      placeholder={"Correo electrónico"}
+                      name={"tutor"}
+                      onValueChange={receiveFromChild}
+                      type="text"
+                    />
+                  </div>
+                  <div className="col-span-6 md:col-span-3">
+                    <Input
+                      texto={""}
+                      placeholder={"Ruc de la empresa"}
+                      name={"tutor"}
+                      onValueChange={receiveFromChild}
+                      type="text"
+                    />
+                  </div>
+                  <div className="col-span-6 md:col-span-6">
+                    <TextArea
+                      texto={""}
+                      placeholder={"MENSAJE"}
+                      name={""}
+                      onValueChange={receiveFromChild}
+                    />
+                  </div>
+                  <div className="col-span-6 md:col-span-6">
+                    <div className="space-y-2">
+                      <label className="flex items-center">
+                        <input type="checkbox" className="hidden" />
+                        <div className="min-w-[24px] h-6 border-2 border-[--color-primary] rounded flex items-center justify-center hover:border-[--color-primary] transition duration-300">
+                          <div className="hidden icon">
+                            <Check
+                              strokeWidth={"3"}
+                              className="font-bold"
+                              color="#009877"
+                              height={20}
+                              width={20}
+                            />
+                          </div>
+                        </div>
+                        <span className="ml-2 text-[#9B8F86]">
+                          He leído y acepto la Políticas de Privacidad de Datos
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col-span-6 md:col-span-6 pt-6">
+                    <Button
+                      extraStyles="w-full md:w-[205px] h-[50px] btn-primary"
+                      label={"enviar"}
+                      customClick={(event) => console.log(event)}
+                    />
+                  </div>
+                </form>
               </div>
             </div>
           </div>
