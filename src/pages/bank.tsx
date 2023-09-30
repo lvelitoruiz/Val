@@ -51,7 +51,7 @@ const Bank: React.FC<PageProps> = () => {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-[--gray] relative">
+      <section className="py-20 md:py-24 bg-[--gray] relative">
         <DetailBank />
       </section>
 

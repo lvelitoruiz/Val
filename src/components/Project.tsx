@@ -76,7 +76,7 @@ const Project: React.FC<ProjectProps> = ({
               </div>
             </SwiperSlide>
           </Swiper> */}
-          <div className="min-w-[138px] flex items-center justify-center bg-[--color-primary] h-[36px] absolute top-4 left-4 z-[2]">
+          <div className="min-w-[138px] flex items-center justify-center bg-[--color-primary] h-[36px] absolute top-4 left-4 z-[2] px-5">
             <p className="uppercase text-white">{tagName}</p>
           </div>
         </div>

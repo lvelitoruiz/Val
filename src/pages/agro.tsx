@@ -46,37 +46,34 @@ const Agro: React.FC<PageProps> = () => {
 
   const gallery = [
     {
-      imgUrl: "/static/images/agro-1.jpg",
+      imgUrl: "/static/images/olmos-1.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-2.jpg",
+      imgUrl: "/static/images/olmos-2.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-4.jpg",
+      imgUrl: "/static/images/olmos-4.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-5.jpg",
+      imgUrl: "/static/images/olmos-5.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-6.jpg",
+      imgUrl: "/static/images/olmos-6.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-7.jpg",
+      imgUrl: "/static/images/olmos-7.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-8.jpg",
+      imgUrl: "/static/images/olmos-8.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-9.jpg",
+      imgUrl: "/static/images/olmos-9.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-10.jpg",
+      imgUrl: "/static/images/olmos-10.jpeg",
     },
     {
-      imgUrl: "/static/images/agro-11.jpg",
-    },
-    {
-      imgUrl: "/static/images/agro-3.jpg",
+      imgUrl: "/static/images/olmos-11.jpeg",
     },
   ];
 
@@ -112,17 +109,17 @@ const Agro: React.FC<PageProps> = () => {
         </Swiper>
       </section>
 
-      <section className="py-20 md:py-28 relative bg-white">
+      <section className="py-20 md:py-24 relative bg-white">
         <InfoAgro />
       </section>
 
       <VideoAgro />
 
-      <section className="py-20 md:py-28 bg-[--gray] relative">
+      <section className="py-20 md:py-24 bg-[--gray] relative">
         <DetailAgro />
       </section>
 
-      <section className="py-20 md:py-28 relative bg-white">
+      <section className="py-20 md:py-24 relative bg-white">
         <Location
           title={"Ubicación del Proyecto"}
           location={"Olmos - Fundo San Isidro"}
@@ -130,7 +127,7 @@ const Agro: React.FC<PageProps> = () => {
         />
       </section>
 
-      <section className="py-20 md:py-28 relative bg-[--color-secondary]">
+      <section className="py-20 md:py-24 relative bg-[--color-secondary]">
         <div className="container mx-auto px-6 lg:px-0">
           <h2 className="text-[30px] lg:text-[44px] text-white leading-none pb-10">
             Galería
@@ -171,7 +168,7 @@ const Agro: React.FC<PageProps> = () => {
         </Swiper>
       </section>
 
-      <section className="py-20 md:py-28 relative bg-white">
+      <section className="py-20 md:py-24 relative bg-white">
         <div className="container mx-auto px-6 lg:px-0">
           <div className="grid grid-cols-10 md:grid-cols-12 gap-10">
             <div className="col-span-10 md:col-span-12 lg:col-span-7">

@@ -12,23 +12,23 @@ const AboutValue = () => {
   const data = [
     {
       text: "Integridad y ética",
-      icon: "/static/images/icon.svg",
+      icon: "/static/images/security.svg",
     },
     {
       text: "Cuidado por el medio ambiente",
-      icon: "/static/images/icon.svg",
+      icon: "/static/images/eco.svg",
     },
     {
       text: "Responsabilidad y respeto",
-      icon: "/static/images/icon.svg",
+      icon: "/static/images/respect.svg",
     },
     {
       text: "Trabajo en equipo",
-      icon: "/static/images/icon.svg",
+      icon: "/static/images/team.svg",
     },
     {
       text: "Trabajo en equipo",
-      icon: "/static/images/icon.svg",
+      icon: "/static/images/team.svg",
     }
   ];
 
@@ -63,7 +63,7 @@ const AboutValue = () => {
             {data.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="flex items-center gap-5">
-                <img src={item.icon} alt="" />
+                <img className="h-[50px]" src={item.icon} alt="" />
                 <p className="text-[--color-secondary]">{item.text}</p>
               </div>
             </SwiperSlide>

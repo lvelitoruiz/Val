@@ -73,7 +73,7 @@ const Lot: React.FC<PageProps> = () => {
         <InfoLot />
       </section>
 
-      <section className="py-20 md:py-28 relative bg-white">
+      <section className="py-20 md:py-24 relative bg-white">
         <Location
           title={"Ubicación del Proyecto"}
           location={
@@ -87,7 +87,7 @@ const Lot: React.FC<PageProps> = () => {
         />
       </section>
 
-      <section className="py-20 md:py-28 relative bg-[--color-secondary]">
+      <section className="py-20 md:py-24 relative bg-[--color-secondary]">
         <div className="container mx-auto px-6 lg:px-0">
           <h2 className="text-[30px] lg:text-[44px] text-white leading-none pb-10">
             Galería
@@ -124,7 +124,7 @@ const Lot: React.FC<PageProps> = () => {
         </Swiper>
       </section>
 
-      <section className="py-20 md:py-28 relative bg-white">
+      <section className="py-20 md:py-24 relative bg-white">
         <div className="container mx-auto px-6 lg:px-0">
           <h2 className="text-[30px] lg:text-[44px] text-[--color-secondary] leading-none pb-8">
             Distribución de lotes

@@ -28,11 +28,6 @@ const About: React.FC<PageProps> = () => {
     },
     {
       imageUrl: "/static/images/agro.jpg",
-      name: "Karen Chapoñan",
-      position: "Gerente Financiero",
-    },
-    {
-      imageUrl: "/static/images/agro.jpg",
       name: "Pablo Delgado",
       position: "Director",
     },
@@ -52,7 +47,7 @@ const About: React.FC<PageProps> = () => {
         <SliderAbout />
       </section>
 
-      <section className="py-20 md:py-28 bg-white relative">
+      <section className="py-20 md:py-24 bg-white relative">
         <div className="container mx-auto px-6 lg:px-0">
           <div className="md:w-8/12 lg:w-5/12 mx-auto mb-14">
             <Title
@@ -78,7 +73,7 @@ const About: React.FC<PageProps> = () => {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-white relative">
+      <section className="py-20 md:py-24 bg-white relative">
         <div className="container mx-auto px-6 lg:px-0">
           <div className="mx-auto mb-14">
             <h2 className="pb-4 leading-none text-[--color-secondary] text-center text-[30px] lg:text-[44px]">

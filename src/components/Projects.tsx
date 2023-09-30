@@ -13,7 +13,7 @@ import "swiper/css/effect-fade";
 const Projects = () => {
   const data = [
     {
-      tagName: "PREVENTA",
+      tagName: "proximo lanzamiento",
       imageUrl: "/static/images/top-life-1.jpg",
       logoUrl: "/static/images/logo-white.svg",
       price: "S/360,000",

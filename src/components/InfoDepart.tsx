@@ -3,6 +3,7 @@ import React from "react";
 import Button from "../components/Button";
 import HoverImg from "./HoverImg";
 
+
 const InfoDepart = () => {
   const handleCustomClick = (event: string) => {
     console.log("custom click: ", event);
