@@ -54,6 +54,7 @@ const Lot: React.FC<PageProps> = () => {
       imgUrl: "/static/images/oxa-12.jpg",
     },
   ];
+
   return (
     <>
       <Header />
@@ -93,7 +94,7 @@ const Lot: React.FC<PageProps> = () => {
             Galería
           </h2>
         </div>
-        <Swiper
+        {/* <Swiper
           slidesPerView={1}
           centeredSlides={true}
           spaceBetween={20}
@@ -121,7 +122,7 @@ const Lot: React.FC<PageProps> = () => {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
       </section>
 
       <section className="py-20 md:py-24 relative bg-white">
