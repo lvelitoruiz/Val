@@ -13,6 +13,7 @@ import AboutConexa from "../components/AboutConexa";
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const About: React.FC<PageProps> = () => {
   const data = [
@@ -38,7 +39,9 @@ const About: React.FC<PageProps> = () => {
     },
   ];
 
-  AOS.init();
+  useEffect( () => {
+    AOS.init();
+  },[])
   
   return (
     <>

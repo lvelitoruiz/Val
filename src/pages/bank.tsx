@@ -11,9 +11,13 @@ import DetailBank from "../components/DetailBank";
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Bank: React.FC<PageProps> = () => {
-  AOS.init();
+  
+  useEffect( () => {
+    AOS.init();
+  },[])
 
   return (
     <>

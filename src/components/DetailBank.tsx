@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import bank2 from "../images/bank-2.jpg";
 import AOS from 'aos';
@@ -6,7 +6,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const DetailBank = () => {
-  AOS.init();
+  
+  useEffect(() => {
+    AOS.init();
+  },[])
 
   return (
     <>

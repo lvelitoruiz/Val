@@ -13,7 +13,7 @@ import Input from "../components/Input";
 import TextArea from "../components/TextArea";
 import Button from "../components/Button";
 
-const Lot: React.FC<PageProps> = () => {
+const Lot = () => {
   const [userName, setUserName] = useState("");
   const receiveFromChild = (event: any) => {
     setUserName(event);
@@ -54,7 +54,7 @@ const Lot: React.FC<PageProps> = () => {
       imgUrl: "/static/images/oxa-12.jpg",
     },
   ];
-
+  
   return (
     <>
       <Header />
@@ -94,7 +94,7 @@ const Lot: React.FC<PageProps> = () => {
             Galería
           </h2>
         </div>
-        {/* <Swiper
+        <Swiper
           slidesPerView={1}
           centeredSlides={true}
           spaceBetween={20}
@@ -122,7 +122,7 @@ const Lot: React.FC<PageProps> = () => {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper> */}
+        </Swiper>
       </section>
 
       <section className="py-20 md:py-24 relative bg-white">
@@ -244,5 +244,3 @@ const Lot: React.FC<PageProps> = () => {
 };
 
 export default Lot;
-
-export const Head: HeadFC = () => <title>Val - Lotes</title>;
