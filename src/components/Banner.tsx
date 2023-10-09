@@ -9,7 +9,7 @@ import {
   PiggyBank,
   ArrowTr,
 } from "iconoir-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -19,77 +19,119 @@ import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import SliderBanner from "./SliderBanner";
+import { processInfo } from "../utils/processInfo";
+
+interface dataItem {
+  title: string,
+  imgUrl: string,
+  titleMobile: string,
+  imgAlt: string,
+  paragraph: string,
+  nameProyect: string,
+  btn: string,
+  projects: boolean,
+  link: string,
+}
 
 const Banner = () => {
-  const data = [
-    {
-      title: "Espacios modernos, para familias modernas",
-      imgUrl: "/static/images/top-life-2.jpg",
-      titleMobile: "Viviendas multifamiliares",
-      imgAlt: "",
-      paragraph:
-        "Construimos departamentos eco amigables, que ayudan a crear un mejor entorno a la vez que cuidamos el planeta.",
-      nameProyect: "Top Life",
-      btn: "VER NUESTROS PROYECTOS",
-      projects: true,
-    },
-    {
-      title: "Urbanizamos lotes para crear mejores ciudades",
-      imgUrl: "/static/images/oxa.jpg",
-      imgAlt: "",
-      titleMobile: "Lotes Urbanos",
-      paragraph:
-        "Queremos que las ciudades crezcan ordenadamente y diseñamos proyectos de lotes urbanos para mejorar la calidad de vida de las personas.",
-      nameProyect: "Oxapampa",
-      btn: "VER NUESTROS PROYECTOS",
-      projects: true,
-    },
-    {
-      title:
-        "Transformamos bancos de terrenos en oportunidades para la agro industria",
-      imgUrl: "/static/images/agro.jpg",
-      imgAlt: "",
-      titleMobile: "Desarrollo Agroindustrial",
-      paragraph:
-        "Creamos nuevos negocios a partir de explotar terrenos de alto valor agrícola en el interior del país.",
-      nameProyect: "Proyecto Olmos - Fundo San Isidro",
-      btn: "VER NUESTROS PROYECTOS",
-      projects: true,
-    },
-    {
-      title:
-        "Administramos bancos de terrenos en el interior del país para crear valor futuro",
-      imgUrl: "/static/images/bank.jpg",
-      imgAlt: "",
-      titleMobile: "Banco de terrenos",
-      paragraph: "2,500 hectáreas forman parte de nuestro portafolio.",
-      nameProyect: "",
-      btn: "MÁS INFORMACIÓN",
-      projects: false,
-    },
-    {
-      title: "¿Quieres vender un terreno urbano?",
-      imgUrl: "/static/images/sell.jpg",
-      imgAlt: "",
-      titleMobile: "Vende tu terreno",
-      paragraph:
-        "Buscamos nuevos espacios dentro de la ciudad para desarrollar proyectos inmobiliarios.",
-      nameProyect: "",
-      btn: "MÁS INFORMACIÓN",
-      projects: false,
-    },
-    {
-      title: "Somos parte de Conexa Financial Group",
-      imgUrl: "/static/images/invest.jpg",
-      imgAlt: "",
-      titleMobile: "¿Quieres invertir?",
-      paragraph:
-        "Invierte con nosotros y genera rentabilidad a partir de productos inmobiliarios.",
-      nameProyect: "",
-      btn: "MÁS INFORMACIÓN",
-      projects: false,
-    },
-  ];
+
+  const [data,setData] = useState<dataItem[]>([]);
+
+  const getBannerInfo = async () => {
+    const dataResponse: any = await processInfo("banner-items");
+
+    const dataFormatted = dataResponse.data.map( (item: any) => ({
+      title: item.attributes.title,
+      imgUrl: item.attributes.image.data.attributes.url,
+      titleMobile: item.attributes.titlemobile,
+      imgAlt: item.attributes.imgalt,
+      paragraph: item.attributes.texto,
+      nameProyect: item.attributes.projectname,
+      btn: item.attributes.btn,
+      projects: item.attributes.projects,
+      link: item.attributes.link
+    }))
+
+    setData(dataFormatted);
+  }
+
+  useEffect(() => {
+    console.log('the data response: ',data);
+  },[data]);
+
+  useEffect( () => {
+    getBannerInfo();
+  },[]);
+
+  // const data = [
+  //   {
+  //     title: "Espacios modernos, para familias modernas",
+  //     imgUrl: "/static/images/top-life-2.jpg",
+  //     titleMobile: "Viviendas multifamiliares",
+  //     imgAlt: "",
+  //     paragraph:
+  //       "Construimos departamentos eco amigables, que ayudan a crear un mejor entorno a la vez que cuidamos el planeta.",
+  //     nameProyect: "Top Life",
+  //     btn: "VER NUESTROS PROYECTOS",
+  //     projects: true,
+  //   },
+  //   {
+  //     title: "Urbanizamos lotes para crear mejores ciudades",
+  //     imgUrl: "/static/images/oxa.jpg",
+  //     imgAlt: "",
+  //     titleMobile: "Lotes Urbanos",
+  //     paragraph:
+  //       "Queremos que las ciudades crezcan ordenadamente y diseñamos proyectos de lotes urbanos para mejorar la calidad de vida de las personas.",
+  //     nameProyect: "Oxapampa",
+  //     btn: "VER NUESTROS PROYECTOS",
+  //     projects: true,
+  //   },
+  //   {
+  //     title:
+  //       "Transformamos bancos de terrenos en oportunidades para la agro industria",
+  //     imgUrl: "/static/images/agro.jpg",
+  //     imgAlt: "",
+  //     titleMobile: "Desarrollo Agroindustrial",
+  //     paragraph:
+  //       "Creamos nuevos negocios a partir de explotar terrenos de alto valor agrícola en el interior del país.",
+  //     nameProyect: "Proyecto Olmos - Fundo San Isidro",
+  //     btn: "VER NUESTROS PROYECTOS",
+  //     projects: true,
+  //   },
+  //   {
+  //     title:
+  //       "Administramos bancos de terrenos en el interior del país para crear valor futuro",
+  //     imgUrl: "/static/images/bank.jpg",
+  //     imgAlt: "",
+  //     titleMobile: "Banco de terrenos",
+  //     paragraph: "2,500 hectáreas forman parte de nuestro portafolio.",
+  //     nameProyect: "",
+  //     btn: "MÁS INFORMACIÓN",
+  //     projects: false,
+  //   },
+  //   {
+  //     title: "¿Quieres vender un terreno urbano?",
+  //     imgUrl: "/static/images/sell.jpg",
+  //     imgAlt: "",
+  //     titleMobile: "Vende tu terreno",
+  //     paragraph:
+  //       "Buscamos nuevos espacios dentro de la ciudad para desarrollar proyectos inmobiliarios.",
+  //     nameProyect: "",
+  //     btn: "MÁS INFORMACIÓN",
+  //     projects: false,
+  //   },
+  //   {
+  //     title: "Somos parte de Conexa Financial Group",
+  //     imgUrl: "/static/images/invest.jpg",
+  //     imgAlt: "",
+  //     titleMobile: "¿Quieres invertir?",
+  //     paragraph:
+  //       "Invierte con nosotros y genera rentabilidad a partir de productos inmobiliarios.",
+  //     nameProyect: "",
+  //     btn: "MÁS INFORMACIÓN",
+  //     projects: false,
+  //   },
+  // ];
 
   return (
     <div className="pt-20 lg:h-screen">
@@ -116,6 +158,7 @@ const Banner = () => {
               nameProyect={item.nameProyect}
               btn={item.btn}
               projects={item.projects}
+              link={item.link}
             />
           </SwiperSlide>
         ))}
