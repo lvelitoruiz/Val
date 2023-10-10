@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
@@ -12,7 +12,9 @@ const InfoLot = () => {
   const handleCustomClick = (event: string) => {
     console.log("custom click: ", event);
   };
-  AOS.init();
+  useEffect(() => {
+    AOS.init();
+  },[]);
 
   return (
     <>

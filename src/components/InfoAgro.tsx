@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AOS from 'aos';
 
 import agro14 from "../images/agro-14.jpg";
 import 'aos/dist/aos.css';
 
 const InfoAgro = () => {
-  AOS.init();
-  
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <div className="container mx-auto px-6 lg:px-0">

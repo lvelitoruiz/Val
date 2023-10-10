@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
@@ -9,8 +9,10 @@ interface ProjectProps {
   blockStyles?: string;
 }
 const Agent: React.FC<ProjectProps> = ({ imgUrl, info, imgStyles, blockStyles }) => {
-  AOS.init();
-  
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500" className={`relative ${blockStyles}`}>
       <div className={`relative ${imgStyles}`}>

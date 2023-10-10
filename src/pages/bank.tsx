@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import type { HeadFC, PageProps } from "gatsby";
 
 import Header from "../components/Header";
@@ -13,7 +13,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Bank: React.FC<PageProps> = () => {
-  AOS.init();
+  useEffect(() => {
+    AOS.init();
+  },[]);
 
   return (
     <>

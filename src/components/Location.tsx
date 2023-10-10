@@ -25,7 +25,9 @@ const Location: React.FC<ProjectProps> = ({
   wsp = false,
 }) => {
   const [InfoWsp, setProyectos] = useState(wsp);
-  AOS.init();
+  useEffect(() => {
+    AOS.init();
+  },[]);
 
   useEffect(() => {
     if (wsp !== undefined && wsp !== null) {
