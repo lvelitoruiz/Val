@@ -11,14 +11,6 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-postcss",
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          // include: /public/assets/,
-        },
-      },
-    },
   ],
 };
 

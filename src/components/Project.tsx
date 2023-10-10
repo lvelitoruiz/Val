@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import "swiper/css";
 
 import Button from "./Button";
+import { navigate } from "gatsby";
 
 interface ProjectProps {
   tagName: string;
@@ -17,6 +18,7 @@ interface ProjectProps {
   nroArea: string;
   nroBedroom: string;
   Typeprojects: boolean;
+  link: string
 }
 
 const Project: React.FC<ProjectProps> = ({
@@ -31,11 +33,13 @@ const Project: React.FC<ProjectProps> = ({
   nroArea,
   nroBedroom,
   Typeprojects = false,
+  link,
 }) => {
 
   const [TipoProyectos, setProyectos] = useState(Typeprojects);
+
   const handleCustomClick = (event: string) => {
-    console.log("custom click: ", event);
+    navigate(`/${link}`)
   };
 
   useEffect(() => {

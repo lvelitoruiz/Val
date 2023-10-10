@@ -1,64 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Button from "../components/Button";
 import HoverImg from "./HoverImg";
+import { processInfo } from "../utils/processInfo";
+import Markdown from "react-markdown";
+
+interface galleryItem {
+  imgUrl: string,
+  info: string,
+  blockStyles: string,
+  imgStyles: string,
+}
 
 
-const InfoDepart = () => {
+const InfoDepart = ({infoObject}: any) => {
+
+  const [data, setData] = useState<galleryItem[]>([]);
+
+  const getProjectInfo = async () => {
+    const dataResponse: any = await processInfo("departmentgalleries");
+
+    const dataFormatted = dataResponse.data.map((item: any) => ({
+      info: item.attributes.info,
+      imgUrl: item.attributes.image.data.attributes.url,
+      blockStyles: item.attributes.blockstyles,
+      imgStyles: item.attributes.imgstyles,
+    }))
+
+    setData(dataFormatted);
+  }
+
+  useEffect(() => {
+    getProjectInfo();
+  }, []);
+
+
   const handleCustomClick = (event: string) => {
     console.log("custom click: ", event);
   };
-
-  const data = [
-    {
-      imgUrl: "/static/images/dep-1.jpg",
-      info: "Empieza tu vida en lo más TOP de la ciudad con VAL Desarrollos Inmobiliarios",
-      blockStyles:"col-span-10 md:col-span-6",
-      imgStyles: "h-[300px] lg:h-[490px]",
-    },
-    {
-      imgUrl: "/static/images/dep-2.jpg",
-      info: "Empieza tu vida en lo más TOP de la ciudad con VAL Desarrollos Inmobiliarios",
-      blockStyles:"col-span-10 md:col-span-3",
-      imgStyles: "h-[300px] lg:h-[490px]",
-    },
-    {
-      imgUrl: "/static/images/dep-3.jpg",
-      info: "Empieza tu vida en lo más TOP de la ciudad con VAL Desarrollos Inmobiliarios",
-      blockStyles:"col-span-10 md:col-span-3",
-      imgStyles: "h-[300px] lg:h-[490px]",
-    },
-    {
-      imgUrl: "/static/images/dep-4.jpg",
-      info: "Empieza tu vida en lo más TOP de la ciudad con VAL Desarrollos Inmobiliarios",
-      blockStyles:"col-span-10 md:col-span-6",
-      imgStyles: "h-[300px] lg:h-[490px]",
-    },
-    {
-      imgUrl: "/static/images/dep-5.jpg",
-      info: "Empieza tu vida en lo más TOP de la ciudad con VAL Desarrollos Inmobiliarios",
-      blockStyles:"col-span-10 md:col-span-2",
-      imgStyles: "h-[300px]",
-    },
-    {
-      imgUrl: "/static/images/dep-6.jpg",
-      info: "Empieza tu vida en lo más TOP de la ciudad con VAL Desarrollos Inmobiliarios",
-      blockStyles:"col-span-10 md:col-span-2",
-      imgStyles: "h-[300px]",
-    },
-    {
-      imgUrl: "/static/images/dep-7.jpg",
-      info: "Empieza tu vida en lo más TOP de la ciudad con VAL Desarrollos Inmobiliarios",
-      blockStyles:"col-span-10 md:col-span-2",
-      imgStyles: "h-[300px]",
-    },
-    {
-      imgUrl: "/static/images/dep-8.jpg",
-      info: "Empieza tu vida en lo más TOP de la ciudad con VAL Desarrollos Inmobiliarios",
-      blockStyles:"col-span-10 md:col-span-6",
-      imgStyles: "h-[300px] lg:h-[490px]",
-    },
-  ];
 
   return (
     <>
@@ -67,16 +46,16 @@ const InfoDepart = () => {
           <div className="w-full lg:w-4/12 lg:sticky lg:!top-40">
             <div>
               <div className="pb-10">
-                <p className="text-[--color-secondary] font-light">PROYECTO</p>
+                <p className="text-[--color-secondary] font-light">{infoObject.project}</p>
                 <h2 className="text-[--color-secondary] text-[30px] lg:text-[44px] uppercase leading-none">
-                  TOP LIFE
+                  {infoObject.infoTitle}
                 </h2>
                 <p className="text-[--color-secondary] text-xl">
-                  Juan de Aliaga
+                  {infoObject.infoDirection}
                 </p>
               </div>
-              <div className="pb-5">
-                <p className="text-[--color-secondary] font-light pb-4">
+              <div className="pb-5 text-[--color-secondary] font-light markdown-container">
+                {/* <p className="text-[--color-secondary] font-light pb-4">
                   TOP LIFE - Juan de Aliaga es un edificio multifamiliar,
                   ubicado en Magdalena del Mar, de 22 pisos, con azotea y 5
                   sótanos. Ofrecemos 84 departamentos de 1, 2 y 3 dormitorios y
@@ -85,7 +64,8 @@ const InfoDepart = () => {
                 <p className="text-[--color-secondary] font-light">
                   Conoce más sobre nuestro nuevo proyecto en etapa de pre
                   lanzamiento.
-                </p>
+                </p> */}
+                <Markdown>{infoObject.paragraphs}</Markdown>
               </div>
               <Button
                 label={"VER PROYECTO"}

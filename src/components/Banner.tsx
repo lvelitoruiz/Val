@@ -55,10 +55,6 @@ const Banner = () => {
     setData(dataFormatted);
   }
 
-  useEffect(() => {
-    console.log('the data response: ',data);
-  },[data]);
-
   useEffect( () => {
     getBannerInfo();
   },[]);
