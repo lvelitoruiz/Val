@@ -2,6 +2,7 @@ import { City } from "iconoir-react";
 import React, { useEffect, useState } from "react";
 
 import Button from "./Button";
+import { navigate } from "gatsby";
 
 interface SliderBannerProps {
   title: string;
@@ -11,7 +12,8 @@ interface SliderBannerProps {
   nameProyect: string;
   titleMobile?: string;
   btn: string;
-  projects: boolean; 
+  projects: boolean;
+  link: string,
 }
 
 const SliderBanner: React.FC<SliderBannerProps> = ({
@@ -23,11 +25,12 @@ const SliderBanner: React.FC<SliderBannerProps> = ({
   titleMobile,
   projects = false,
   btn,
+  link,
 }) => {
   const [proyectos, setProyectos] = useState(projects);
 
   const handleCustomClick = (event: string) => {
-    console.log("custom click: ", event);
+    navigate(`/${link}`)
   };
 
   useEffect(() => {

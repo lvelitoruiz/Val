@@ -1,8 +1,8 @@
 import { AlignRight, DeleteCircle, FacebookTag, Instagram, LinkedIn } from "iconoir-react";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Button from "./Button";
-import Logo from "../images/logo.svg";
 import DropdownHeader from "./DropdownHeader";
+import { Logo } from "./Logo";
 
 const Header = () => {
 
@@ -20,10 +20,10 @@ const Header = () => {
     <div className="fixed w-full z-10">
       <div className="bg-white flex items-center justify-between h-[80px] shadow-[0_5px_20px_0_rgba(66,66,66,0.10)] px-6 lg:px-10">
         <a href="">
-          <img className="h-[42px]" src={Logo} alt="" />
+          <Logo />
         </a>
         <div>
-          
+
           <div className="lg:hidden">
             <button onClick={toggleMenu}>
               <AlignRight color="#313E48" height={30} width={30} />
