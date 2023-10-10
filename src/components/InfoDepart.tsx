@@ -12,7 +12,7 @@ interface galleryItem {
 }
 
 
-const InfoDepart = ({infoObject}: any) => {
+const InfoDepart = ({ infoObject }: any) => {
   const handleCustomClick = (event: string) => {
     console.log("custom click: ", event);
   };
@@ -43,12 +43,12 @@ const InfoDepart = ({infoObject}: any) => {
           <div className="w-full lg:w-4/12 lg:sticky lg:!top-40">
             <div>
               <div className="pb-10">
-                <p className="text-[--color-secondary] font-light">PROYECTO</p>
+                <p className="text-[--color-secondary] font-light">{infoObject.project}</p>
                 <h2 className="text-[--color-secondary] text-[30px] lg:text-[44px] uppercase leading-none">
-                  TOP LIFE
+                  {infoObject.infoTitle}
                 </h2>
                 <p className="text-[--color-secondary] text-xl">
-                  Juan de Aliaga
+                  {infoObject.infoDirection}
                 </p>
               </div>
               <div className="pb-5">
