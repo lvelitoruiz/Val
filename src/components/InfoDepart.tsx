@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
 import HoverImg from "./HoverImg";
 import { processInfo } from "../utils/processInfo";
+import Markdown from "react-markdown";
 
 interface galleryItem {
   imgUrl: string,
@@ -51,8 +52,8 @@ const InfoDepart = ({ infoObject }: any) => {
                   {infoObject.infoDirection}
                 </p>
               </div>
-              <div className="pb-5">
-                <p className="text-[--color-secondary] font-light pb-4">
+              <div className="pb-5 text-[--color-secondary] markdown-text">
+                {/* <p className="text-[--color-secondary] font-light pb-4">
                   TOP LIFE - Juan de Aliaga es un edificio multifamiliar,
                   ubicado en Magdalena del Mar, de 22 pisos, con azotea y 5
                   sótanos. Ofrecemos 84 departamentos de 1, 2 y 3 dormitorios y
@@ -61,7 +62,8 @@ const InfoDepart = ({ infoObject }: any) => {
                 <p className="text-[--color-secondary] font-light">
                   Conoce más sobre nuestro nuevo proyecto en etapa de pre
                   lanzamiento.
-                </p>
+                </p> */}
+                <Markdown>{infoObject.paragraphs}</Markdown>
               </div>
               <Button
                 label={"VER PROYECTO"}
