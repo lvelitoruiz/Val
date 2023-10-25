@@ -8,29 +8,9 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
-const AboutValue = () => {
-  const data = [
-    {
-      text: "Integridad y ética",
-      icon: "/static/images/security.svg",
-    },
-    {
-      text: "Cuidado por el medio ambiente",
-      icon: "/static/images/eco.svg",
-    },
-    {
-      text: "Responsabilidad y respeto",
-      icon: "/static/images/respect.svg",
-    },
-    {
-      text: "Trabajo en equipo",
-      icon: "/static/images/team.svg",
-    },
-    {
-      text: "Trabajo en equipo",
-      icon: "/static/images/team.svg",
-    }
-  ];
+const AboutValue = ({values}: any) => {
+
+  console.log(values);
 
   return (
     <>
@@ -60,11 +40,11 @@ const AboutValue = () => {
             modules={[Navigation]}
             className="SwiperAbout"
           >
-            {data.map((item, index) => (
+            {values.map((item: any, index: number) => (
             <SwiperSlide key={index}>
               <div className="flex items-center gap-5">
-                <img className="h-[50px]" src={item.icon} alt="" />
-                <p className="text-[--color-secondary]">{item.text}</p>
+                <img className="h-[50px]" src={item.attributes.url} alt="" />
+                <p className="text-[--color-secondary]">{item.attributes.alternativeText}</p>
               </div>
             </SwiperSlide>
             ))}

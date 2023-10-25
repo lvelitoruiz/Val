@@ -5,11 +5,13 @@ interface ProjectProps {
   imgUrl: string;
   name: string;
   position: string;
+  url: string;
 }
 const Agent: React.FC<ProjectProps> = ({
   imgUrl,
   name,
   position,
+  url,
 }) => {
   return (
     <div>
@@ -21,7 +23,7 @@ const Agent: React.FC<ProjectProps> = ({
           <p className="text-[--color-secondary]">{name}</p>
           <p className="text-[--color-secondary] text-sm font-light leading-tight">{position}</p>
         </div>
-        <a className="w-[42px] h-[42px] flex items-center justify-center bg-[--color-secondary] rounded-sm" href="">
+        <a className="w-[42px] h-[42px] flex items-center justify-center bg-[--color-secondary] rounded-sm" href={url}>
           <LinkedIn color="white" height={24} width={24} />
         </a>
       </div>

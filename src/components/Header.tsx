@@ -1,10 +1,25 @@
 import { AlignRight, DeleteCircle, FacebookTag, Instagram, LinkedIn } from "iconoir-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import DropdownHeader from "./DropdownHeader";
 import { Logo } from "./Logo";
+import { processInfo } from "../utils/processInfo";
+import { Link } from "gatsby";
 
 const Header = () => {
+
+  const [data,setData] = useState([]);
+
+  const [element,setElement] = useState<{text: string, url: string}>();
+
+  const getInfo = async () => {
+    const dataResponse: any = await processInfo("menus");
+
+
+    
+    setElement(dataResponse.data[0].attributes.menuLinks.shift())
+    setData(dataResponse.data[0].attributes.menuLinks)
+  }
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -16,12 +31,20 @@ const Header = () => {
     setMenuOpen(false);
   };
 
+  useEffect( () => {
+    getInfo();
+  },[]);
+
+  // useEffect( () => {
+  //   console.log(element,data);
+  // },[element,data]);
+
   return (
     <div className="fixed w-full z-10">
       <div className="bg-white flex items-center justify-between h-[80px] shadow-[0_5px_20px_0_rgba(66,66,66,0.10)] px-6 lg:px-10">
-        <a href="">
+        <Link to="/">
           <Logo />
-        </a>
+        </Link>
         <div>
 
           <div className="lg:hidden">
@@ -38,8 +61,10 @@ const Header = () => {
               </div>
               <div className="flex flex-col lg:flex-row items-center gap-10">
                 <nav className="flex flex-col lg:flex-row items-center gap-10">
-                  <a className="text-[--color-secondary] uppercase font-semibold" href="about">Nosotros</a>
-                  <DropdownHeader />
+                  {
+                    (element !== null && element !== undefined) ? <Link className="text-[--color-secondary] uppercase font-semibold" to="/about">{element.text}</Link> : null 
+                  }
+                  <DropdownHeader links={data} />
                 </nav>
                 <Button
                   extraStyles="w-[216px] h-[48px] btn-primary"

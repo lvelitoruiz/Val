@@ -3,7 +3,7 @@ import React from 'react'
 export const Logo = () => {
     return (
         <svg width="190" height="42" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="Frame" clip-path="url(#clip0_238_251)">
+            <g id="Frame" clipPath="url(#clip0_238_251)">
                 <g id="Group">
                     <g id="Group_2">
                         <g id="Group_3">
